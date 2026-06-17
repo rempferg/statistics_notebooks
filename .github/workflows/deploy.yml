@@ -24,6 +24,7 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           jupyter lite build --contents content --output-dir dist
+          python3 .github/scripts/patch_default_notebook.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
